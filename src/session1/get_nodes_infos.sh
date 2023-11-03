@@ -15,51 +15,34 @@ nodes=$(cat nodes.txt)
 # create array from the nodes names
 nodes_array=($nodes)
 
-# create an empty array to save the nodes ping info
-nodes_ping_info=()
-
-# create an empty array to save the nodes traceroute info
-nodes_traceroute_info=()
-
-# create an empty array to save the nodes ifconfig info
-nodes_ifconfig_info=()
-
 # loop over all the nodes and get the info
 for node in "${nodes_array[@]}"
 do
     echo "Getting info from $node"
 
     # get the node ifconfig info and save it in the nodes_ifconfig_info array
-    node_ifconfig_info=$(sshpass -p $2 ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o ConnectionAttempts=3 $1@${node} 'ifconfig')
     # add the node name to the output
-    node_ifconfig_info="\n\n\n++++++++++++++++++++++ $node ++++++++++++++++++++++\n\n\n"
-    nodes_ifconfig_info+=($node_ifconfig_info)
+    echo -e "\n\n\n++++++++++++++++++++++ $node ++++++++++++++++++++++\n\n\n" >> node_ifconfig_info.txt
+    sshpass -p $2 ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o ConnectionAttempts=3 $1@$node 'ifconfig' >> node_ifconfig_info.txt
+    nodes_ifconfig_info+="\n\n\n"
 
-    echo "Pinging $node"
+    echo "Pinging/traceroute from $node"
 
     # loop over all the nodes and ping them
     for node2 in "${nodes_array[@]}"
     do
         echo -n "+"
+
         # ping the node2 from node and save the output in the nodes_ping_info array
-        node_ping_info=$(sshpass -p $2 ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o ConnectionAttempts=3 $1@${node} 'ping -c 1' ${node2})
-        # add the source and destination nodes to the output
-        node_ping_info="\n\n\n++++++++++++++++++++++ $node -> $node2 ++++++++++++++++++++++\n\n\n"
-        nodes_ping_info+=($node_ping_info)
+        echo -e "\n\n\n++++++++++++++++++++++ $node -> $node2 ++++++++++++++++++++++\n\n\n" >> node_ping_info.txt
+        sshpass -p $2 ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o ConnectionAttempts=3 $1@${node} 'ping -c 1' ${node2} >> node_ping_info.txt
 
         # traceroute the node2 from node and save the output in the nodes_traceroute_info array
-        node_traceroute_info=$(sshpass -p $2 ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o ConnectionAttempts=3 $1@${node} 'traceroute' ${node2})
-        # add the source and destination nodes to the output
-        node_traceroute_info="\n\n\n++++++++++++++++++++++ $node -> $node2 ++++++++++++++++++++++\n\n\n"
-        nodes_traceroute_info+=($node_traceroute_info)
+        echo -e "\n\n\n++++++++++++++++++++++ $node -> $node2 ++++++++++++++++++++++\n\n\n" >> node_traceroute_info.txt
+        sshpass -p $2 ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o ConnectionAttempts=3 $1@${node} "traceroute $node2" >> node_traceroute_info.txt
     done
+
+    echo -e "\n\n\n\n"
 done
 
-# save the nodes ping info in a file named 'node_ping_info.txt'
-echo -e "${nodes_ping_info[@]}" > node_ping_info.txt
-
-# save the nodes ping info in a file named 'node_ifconfig_info.txt'
-echo -e "${nodes_ifconfig_info[@]}" > node_ifconfig_info.txt
-
-# save the nodes ping info in a file named 'node_traceroute_info.txt'
-echo -e "${nodes_traceroute_info[@]}" > node_traceroute_info.txt
+echo ""
