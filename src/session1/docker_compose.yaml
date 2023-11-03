@@ -132,7 +132,7 @@ services:
     ports:
       - "2222:22"
     volumes:
-      - ./:/scripts:rw
+      - ./:/root/scripts:rw
     networks:
       network1:
         ipv4_address: 10.0.0.50
