@@ -1,0 +1,161 @@
+version: "3.7"
+
+services:
+  router1:
+    image: rn-lab-sess-1:latest
+    cap_add:
+      - NET_ADMIN
+    networks:
+      network1:
+        ipv4_address: 10.0.0.2
+      router2router:
+        ipv4_address: 10.2.0.2
+    extra_hosts:
+      - "router1:10.0.0.2"
+      - "router2:10.1.0.2"
+      - "sender1:10.0.0.3"
+      - "sender2:10.0.0.4"
+      - "receiver1:10.1.0.3"
+      - "receiver2:10.1.0.4"
+    command: >-
+      sh -c "iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE &&
+      iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE &&
+      iptables -A FORWARD -i eth1 -j ACCEPT &&
+      iptables -A FORWARD -i eth0 -j ACCEPT &&
+      ip route add 10.1.0.0/16 via 10.2.0.4 &&
+      /usr/sbin/sshd -D"
+
+  router2:
+    image: rn-lab-sess-1:latest
+    cap_add:
+      - NET_ADMIN
+    networks:
+      network2:
+        ipv4_address: 10.1.0.2
+      router2router:
+        ipv4_address: 10.2.0.4
+    extra_hosts:
+      - "router1:10.0.0.2"
+      - "router2:10.1.0.2"
+      - "sender1:10.0.0.3"
+      - "sender2:10.0.0.4"
+      - "receiver1:10.1.0.3"
+      - "receiver2:10.1.0.4"
+    command: >-
+      sh -c "iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE &&
+      iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE &&
+      iptables -A FORWARD -i eth1 -j ACCEPT &&
+      iptables -A FORWARD -i eth0 -j ACCEPT &&
+      ip route add 10.0.0.0/16 via 10.2.0.2 &&
+      /usr/sbin/sshd -D"
+
+  sender1:
+    image: rn-lab-sess-1:latest
+    cap_add:
+      - NET_ADMIN
+    networks:
+      network1:
+        ipv4_address: 10.0.0.3
+    extra_hosts:
+      - "router1:10.0.0.2"
+      - "router2:10.1.0.2"
+      - "sender1:10.0.0.3"
+      - "sender2:10.0.0.4"
+      - "receiver1:10.1.0.3"
+      - "receiver2:10.1.0.4"
+    command: >-
+      sh -c "ip route del default &&
+      ip route add default via 10.0.0.2 &&
+      /usr/sbin/sshd -D"
+
+  sender2:
+    image: rn-lab-sess-1:latest
+    cap_add:
+      - NET_ADMIN
+    networks:
+      network1:
+        ipv4_address: 10.0.0.4
+    extra_hosts:
+      - "router1:10.0.0.2"
+      - "router2:10.1.0.2"
+      - "sender1:10.0.0.3"
+      - "sender2:10.0.0.4"
+      - "receiver1:10.1.0.3"
+      - "receiver2:10.1.0.4"
+    command: >-
+      sh -c "ip route del default &&
+      ip route add default via 10.0.0.2 &&
+      /usr/sbin/sshd -D"
+
+  receiver1:
+    image: rn-lab-sess-1:latest
+    cap_add:
+      - NET_ADMIN
+    networks:
+      network2:
+        ipv4_address: 10.1.0.3
+    extra_hosts:
+      - "router1:10.0.0.2"
+      - "router2:10.1.0.2"
+      - "sender1:10.0.0.3"
+      - "sender2:10.0.0.4"
+      - "receiver1:10.1.0.3"
+      - "receiver2:10.1.0.4"
+    command: >-
+      sh -c "ip route del default &&
+      ip route add default via 10.1.0.2 &&
+      /usr/sbin/sshd -D"
+
+  receiver2:
+    image: rn-lab-sess-1:latest
+    cap_add:
+      - NET_ADMIN
+    networks:
+      network2:
+        ipv4_address: 10.1.0.4
+    extra_hosts:
+      - "router1:10.0.0.2"
+      - "router2:10.1.0.2"
+      - "sender1:10.0.0.3"
+      - "sender2:10.0.0.4"
+      - "receiver1:10.1.0.3"
+      - "receiver2:10.1.0.4"
+    command: >-
+      sh -c "ip route del default &&
+      ip route add default via 10.1.0.2 &&
+      /usr/sbin/sshd -D"
+  
+  student:
+    image: rn-lab-sess-1:latest
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - "2222:22"
+    volumes:
+      - ./:/scripts:rw
+    networks:
+      network1:
+        ipv4_address: 10.0.0.50
+      network2:
+        ipv4_address: 10.1.0.50
+      router2router:
+        ipv4_address: 10.2.0.50
+
+networks:
+  network1:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.0.0.0/16
+
+  network2:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.1.0.0/16
+    
+  router2router:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.2.0.0/16
