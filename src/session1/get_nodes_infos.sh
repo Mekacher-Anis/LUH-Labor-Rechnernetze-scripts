@@ -22,8 +22,8 @@ do
 
     # get the node ifconfig info and save it in the nodes_ifconfig_info array
     # add the node name to the output
-    echo -e "\n\n\n++++++++++++++++++++++ $node ++++++++++++++++++++++\n\n\n" >> node_ifconfig_info.txt
-    sshpass -p $2 ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o ConnectionAttempts=3 $1@$node 'ifconfig' >> node_ifconfig_info.txt
+    echo -e "\n\n\n++++++++++++++++++++++ $node ++++++++++++++++++++++\n\n\n" >> ./output/node_ifconfig_info.txt
+    sshpass -p $2 ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o ConnectionAttempts=3 $1@$node 'ifconfig' >> ./output/node_ifconfig_info.txt
     nodes_ifconfig_info+="\n\n\n"
 
     echo "Pinging/traceroute from $node"
@@ -34,12 +34,12 @@ do
         echo -n "+"
 
         # ping the node2 from node and save the output in the nodes_ping_info array
-        echo -e "\n\n\n++++++++++++++++++++++ $node -> $node2 ++++++++++++++++++++++\n\n\n" >> node_ping_info.txt
-        sshpass -p $2 ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o ConnectionAttempts=3 $1@${node} 'ping -c 1' ${node2} >> node_ping_info.txt
+        echo -e "\n\n\n++++++++++++++++++++++ $node -> $node2 ++++++++++++++++++++++\n\n\n" >> ./output/node_ping_info.txt
+        sshpass -p $2 ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o ConnectionAttempts=3 $1@${node} 'ping -c 1' ${node2} >> ./output/node_ping_info.txt
 
         # traceroute the node2 from node and save the output in the nodes_traceroute_info array
-        echo -e "\n\n\n++++++++++++++++++++++ $node -> $node2 ++++++++++++++++++++++\n\n\n" >> node_traceroute_info.txt
-        sshpass -p $2 ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o ConnectionAttempts=3 $1@${node} "traceroute $node2" >> node_traceroute_info.txt
+        echo -e "\n\n\n++++++++++++++++++++++ $node -> $node2 ++++++++++++++++++++++\n\n\n" >> ./output/node_traceroute_info.txt
+        sshpass -p $2 ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o ConnectionAttempts=3 $1@${node} "traceroute $node2" >> ./output/node_traceroute_info.txt
     done
 
     echo -e "\n\n\n\n"

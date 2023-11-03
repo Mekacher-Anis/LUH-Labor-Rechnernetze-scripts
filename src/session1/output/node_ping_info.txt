@@ -1,0 +1,468 @@
+
+
+
+++++++++++++++++++++++ sender1 -> sender1 ++++++++++++++++++++++
+
+
+
+PING sender1 (10.0.0.3) 56(84) bytes of data.
+64 bytes from sender1 (10.0.0.3): icmp_seq=1 ttl=64 time=0.022 ms
+
+--- sender1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.022/0.022/0.022/0.000 ms
+
+
+
+++++++++++++++++++++++ sender1 -> sender2 ++++++++++++++++++++++
+
+
+
+PING sender2 (10.0.0.4) 56(84) bytes of data.
+64 bytes from sender2 (10.0.0.4): icmp_seq=1 ttl=64 time=0.030 ms
+
+--- sender2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.030/0.030/0.030/0.000 ms
+
+
+
+++++++++++++++++++++++ sender1 -> receiver1 ++++++++++++++++++++++
+
+
+
+PING receiver1 (10.1.0.3) 56(84) bytes of data.
+64 bytes from receiver1 (10.1.0.3): icmp_seq=1 ttl=62 time=0.061 ms
+
+--- receiver1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.061/0.061/0.061/0.000 ms
+
+
+
+++++++++++++++++++++++ sender1 -> receiver2 ++++++++++++++++++++++
+
+
+
+PING receiver2 (10.1.0.4) 56(84) bytes of data.
+64 bytes from receiver2 (10.1.0.4): icmp_seq=1 ttl=62 time=0.061 ms
+
+--- receiver2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.061/0.061/0.061/0.000 ms
+
+
+
+++++++++++++++++++++++ sender1 -> router1 ++++++++++++++++++++++
+
+
+
+PING router1 (10.0.0.2) 56(84) bytes of data.
+64 bytes from router1 (10.0.0.2): icmp_seq=1 ttl=64 time=0.035 ms
+
+--- router1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.035/0.035/0.035/0.000 ms
+
+
+
+++++++++++++++++++++++ sender1 -> router2 ++++++++++++++++++++++
+
+
+
+PING router2 (10.1.0.2) 56(84) bytes of data.
+64 bytes from router2 (10.1.0.2): icmp_seq=1 ttl=63 time=0.069 ms
+
+--- router2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.069/0.069/0.069/0.000 ms
+
+
+
+++++++++++++++++++++++ sender2 -> sender1 ++++++++++++++++++++++
+
+
+
+PING sender1 (10.0.0.3) 56(84) bytes of data.
+64 bytes from sender1 (10.0.0.3): icmp_seq=1 ttl=64 time=0.041 ms
+
+--- sender1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.041/0.041/0.041/0.000 ms
+
+
+
+++++++++++++++++++++++ sender2 -> sender2 ++++++++++++++++++++++
+
+
+
+PING sender2 (10.0.0.4) 56(84) bytes of data.
+64 bytes from sender2 (10.0.0.4): icmp_seq=1 ttl=64 time=0.020 ms
+
+--- sender2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.020/0.020/0.020/0.000 ms
+
+
+
+++++++++++++++++++++++ sender2 -> receiver1 ++++++++++++++++++++++
+
+
+
+PING receiver1 (10.1.0.3) 56(84) bytes of data.
+64 bytes from receiver1 (10.1.0.3): icmp_seq=1 ttl=62 time=0.070 ms
+
+--- receiver1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.070/0.070/0.070/0.000 ms
+
+
+
+++++++++++++++++++++++ sender2 -> receiver2 ++++++++++++++++++++++
+
+
+
+PING receiver2 (10.1.0.4) 56(84) bytes of data.
+64 bytes from receiver2 (10.1.0.4): icmp_seq=1 ttl=62 time=0.058 ms
+
+--- receiver2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.058/0.058/0.058/0.000 ms
+
+
+
+++++++++++++++++++++++ sender2 -> router1 ++++++++++++++++++++++
+
+
+
+PING router1 (10.0.0.2) 56(84) bytes of data.
+64 bytes from router1 (10.0.0.2): icmp_seq=1 ttl=64 time=0.033 ms
+
+--- router1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.033/0.033/0.033/0.000 ms
+
+
+
+++++++++++++++++++++++ sender2 -> router2 ++++++++++++++++++++++
+
+
+
+PING router2 (10.1.0.2) 56(84) bytes of data.
+64 bytes from router2 (10.1.0.2): icmp_seq=1 ttl=63 time=0.070 ms
+
+--- router2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.070/0.070/0.070/0.000 ms
+
+
+
+++++++++++++++++++++++ receiver1 -> sender1 ++++++++++++++++++++++
+
+
+
+PING sender1 (10.0.0.3) 56(84) bytes of data.
+64 bytes from sender1 (10.0.0.3): icmp_seq=1 ttl=62 time=0.067 ms
+
+--- sender1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.067/0.067/0.067/0.000 ms
+
+
+
+++++++++++++++++++++++ receiver1 -> sender2 ++++++++++++++++++++++
+
+
+
+PING sender2 (10.0.0.4) 56(84) bytes of data.
+64 bytes from sender2 (10.0.0.4): icmp_seq=1 ttl=62 time=0.061 ms
+
+--- sender2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.061/0.061/0.061/0.000 ms
+
+
+
+++++++++++++++++++++++ receiver1 -> receiver1 ++++++++++++++++++++++
+
+
+
+PING receiver1 (10.1.0.3) 56(84) bytes of data.
+64 bytes from receiver1 (10.1.0.3): icmp_seq=1 ttl=64 time=0.014 ms
+
+--- receiver1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.014/0.014/0.014/0.000 ms
+
+
+
+++++++++++++++++++++++ receiver1 -> receiver2 ++++++++++++++++++++++
+
+
+
+PING receiver2 (10.1.0.4) 56(84) bytes of data.
+64 bytes from receiver2 (10.1.0.4): icmp_seq=1 ttl=64 time=0.031 ms
+
+--- receiver2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.031/0.031/0.031/0.000 ms
+
+
+
+++++++++++++++++++++++ receiver1 -> router1 ++++++++++++++++++++++
+
+
+
+PING router1 (10.0.0.2) 56(84) bytes of data.
+64 bytes from router1 (10.0.0.2): icmp_seq=1 ttl=63 time=0.052 ms
+
+--- router1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.052/0.052/0.052/0.000 ms
+
+
+
+++++++++++++++++++++++ receiver1 -> router2 ++++++++++++++++++++++
+
+
+
+PING router2 (10.1.0.2) 56(84) bytes of data.
+64 bytes from router2 (10.1.0.2): icmp_seq=1 ttl=64 time=0.031 ms
+
+--- router2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.031/0.031/0.031/0.000 ms
+
+
+
+++++++++++++++++++++++ receiver2 -> sender1 ++++++++++++++++++++++
+
+
+
+PING sender1 (10.0.0.3) 56(84) bytes of data.
+64 bytes from sender1 (10.0.0.3): icmp_seq=1 ttl=62 time=0.068 ms
+
+--- sender1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.068/0.068/0.068/0.000 ms
+
+
+
+++++++++++++++++++++++ receiver2 -> sender2 ++++++++++++++++++++++
+
+
+
+PING sender2 (10.0.0.4) 56(84) bytes of data.
+64 bytes from sender2 (10.0.0.4): icmp_seq=1 ttl=62 time=0.063 ms
+
+--- sender2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.063/0.063/0.063/0.000 ms
+
+
+
+++++++++++++++++++++++ receiver2 -> receiver1 ++++++++++++++++++++++
+
+
+
+PING receiver1 (10.1.0.3) 56(84) bytes of data.
+64 bytes from receiver1 (10.1.0.3): icmp_seq=1 ttl=64 time=0.036 ms
+
+--- receiver1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.036/0.036/0.036/0.000 ms
+
+
+
+++++++++++++++++++++++ receiver2 -> receiver2 ++++++++++++++++++++++
+
+
+
+PING receiver2 (10.1.0.4) 56(84) bytes of data.
+64 bytes from receiver2 (10.1.0.4): icmp_seq=1 ttl=64 time=0.015 ms
+
+--- receiver2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.015/0.015/0.015/0.000 ms
+
+
+
+++++++++++++++++++++++ receiver2 -> router1 ++++++++++++++++++++++
+
+
+
+PING router1 (10.0.0.2) 56(84) bytes of data.
+64 bytes from router1 (10.0.0.2): icmp_seq=1 ttl=63 time=0.050 ms
+
+--- router1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.050/0.050/0.050/0.000 ms
+
+
+
+++++++++++++++++++++++ receiver2 -> router2 ++++++++++++++++++++++
+
+
+
+PING router2 (10.1.0.2) 56(84) bytes of data.
+64 bytes from router2 (10.1.0.2): icmp_seq=1 ttl=64 time=0.031 ms
+
+--- router2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.031/0.031/0.031/0.000 ms
+
+
+
+++++++++++++++++++++++ router1 -> sender1 ++++++++++++++++++++++
+
+
+
+PING sender1 (10.0.0.3) 56(84) bytes of data.
+64 bytes from sender1 (10.0.0.3): icmp_seq=1 ttl=64 time=0.034 ms
+
+--- sender1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.034/0.034/0.034/0.000 ms
+
+
+
+++++++++++++++++++++++ router1 -> sender2 ++++++++++++++++++++++
+
+
+
+PING sender2 (10.0.0.4) 56(84) bytes of data.
+64 bytes from sender2 (10.0.0.4): icmp_seq=1 ttl=64 time=0.034 ms
+
+--- sender2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.034/0.034/0.034/0.000 ms
+
+
+
+++++++++++++++++++++++ router1 -> receiver1 ++++++++++++++++++++++
+
+
+
+PING receiver1 (10.1.0.3) 56(84) bytes of data.
+64 bytes from receiver1 (10.1.0.3): icmp_seq=1 ttl=63 time=0.046 ms
+
+--- receiver1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.046/0.046/0.046/0.000 ms
+
+
+
+++++++++++++++++++++++ router1 -> receiver2 ++++++++++++++++++++++
+
+
+
+PING receiver2 (10.1.0.4) 56(84) bytes of data.
+64 bytes from receiver2 (10.1.0.4): icmp_seq=1 ttl=63 time=0.056 ms
+
+--- receiver2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.056/0.056/0.056/0.000 ms
+
+
+
+++++++++++++++++++++++ router1 -> router1 ++++++++++++++++++++++
+
+
+
+PING router1 (10.0.0.2) 56(84) bytes of data.
+64 bytes from router1 (10.0.0.2): icmp_seq=1 ttl=64 time=0.021 ms
+
+--- router1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.021/0.021/0.021/0.000 ms
+
+
+
+++++++++++++++++++++++ router1 -> router2 ++++++++++++++++++++++
+
+
+
+PING router2 (10.1.0.2) 56(84) bytes of data.
+64 bytes from router2 (10.1.0.2): icmp_seq=1 ttl=64 time=0.033 ms
+
+--- router2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.033/0.033/0.033/0.000 ms
+
+
+
+++++++++++++++++++++++ router2 -> sender1 ++++++++++++++++++++++
+
+
+
+PING sender1 (10.0.0.3) 56(84) bytes of data.
+64 bytes from sender1 (10.0.0.3): icmp_seq=1 ttl=63 time=0.055 ms
+
+--- sender1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.055/0.055/0.055/0.000 ms
+
+
+
+++++++++++++++++++++++ router2 -> sender2 ++++++++++++++++++++++
+
+
+
+PING sender2 (10.0.0.4) 56(84) bytes of data.
+64 bytes from sender2 (10.0.0.4): icmp_seq=1 ttl=63 time=0.059 ms
+
+--- sender2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.059/0.059/0.059/0.000 ms
+
+
+
+++++++++++++++++++++++ router2 -> receiver1 ++++++++++++++++++++++
+
+
+
+PING receiver1 (10.1.0.3) 56(84) bytes of data.
+64 bytes from receiver1 (10.1.0.3): icmp_seq=1 ttl=64 time=0.036 ms
+
+--- receiver1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.036/0.036/0.036/0.000 ms
+
+
+
+++++++++++++++++++++++ router2 -> receiver2 ++++++++++++++++++++++
+
+
+
+PING receiver2 (10.1.0.4) 56(84) bytes of data.
+64 bytes from receiver2 (10.1.0.4): icmp_seq=1 ttl=64 time=0.039 ms
+
+--- receiver2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.039/0.039/0.039/0.000 ms
+
+
+
+++++++++++++++++++++++ router2 -> router1 ++++++++++++++++++++++
+
+
+
+PING router1 (10.0.0.2) 56(84) bytes of data.
+64 bytes from router1 (10.0.0.2): icmp_seq=1 ttl=64 time=0.033 ms
+
+--- router1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.033/0.033/0.033/0.000 ms
+
+
+
+++++++++++++++++++++++ router2 -> router2 ++++++++++++++++++++++
+
+
+
+PING router2 (10.1.0.2) 56(84) bytes of data.
+64 bytes from router2 (10.1.0.2): icmp_seq=1 ttl=64 time=0.017 ms
+
+--- router2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.017/0.017/0.017/0.000 ms

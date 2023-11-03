@@ -1,0 +1,373 @@
+
+
+
+++++++++++++++++++++++ sender1 -> sender1 ++++++++++++++++++++++
+
+
+
+traceroute to sender1 (10.0.0.3), 30 hops max, 60 byte packets
+ 1  sender1 (10.0.0.3)  0.023 ms  0.005 ms  0.004 ms
+
+
+
+++++++++++++++++++++++ sender1 -> sender2 ++++++++++++++++++++++
+
+
+
+traceroute to sender2 (10.0.0.4), 30 hops max, 60 byte packets
+ 1  sender2 (10.0.0.4)  0.034 ms  0.009 ms  0.007 ms
+
+
+
+++++++++++++++++++++++ sender1 -> receiver1 ++++++++++++++++++++++
+
+
+
+traceroute to receiver1 (10.1.0.3), 30 hops max, 60 byte packets
+ 1  router1 (10.0.0.2)  0.031 ms  0.008 ms  0.007 ms
+ 2  10.2.0.4 (10.2.0.4)  0.025 ms  0.015 ms  0.010 ms
+ 3  receiver1 (10.1.0.3)  0.024 ms  0.015 ms  0.014 ms
+
+
+
+++++++++++++++++++++++ sender1 -> receiver2 ++++++++++++++++++++++
+
+
+
+traceroute to receiver2 (10.1.0.4), 30 hops max, 60 byte packets
+ 1  router1 (10.0.0.2)  0.031 ms  0.008 ms  0.006 ms
+ 2  10.2.0.4 (10.2.0.4)  0.023 ms  0.011 ms  0.010 ms
+ 3  receiver2 (10.1.0.4)  0.024 ms  0.016 ms  0.014 ms
+
+
+
+++++++++++++++++++++++ sender1 -> router1 ++++++++++++++++++++++
+
+
+
+traceroute to router1 (10.0.0.2), 30 hops max, 60 byte packets
+ 1  * * *
+ 2  * * *
+ 3  * * *
+ 4  * * *
+ 5  * * *
+ 6  * router1 (10.0.0.2)  0.299 ms  0.039 ms
+
+
+
+++++++++++++++++++++++ sender1 -> router2 ++++++++++++++++++++++
+
+
+
+traceroute to router2 (10.1.0.2), 30 hops max, 60 byte packets
+ 1  router1 (10.0.0.2)  0.057 ms * *
+ 2  router2 (10.1.0.2)  0.032 ms  0.014 ms  0.013 ms
+
+
+
+++++++++++++++++++++++ sender2 -> sender1 ++++++++++++++++++++++
+
+
+
+traceroute to sender1 (10.0.0.3), 30 hops max, 60 byte packets
+ 1  sender1 (10.0.0.3)  0.038 ms  0.011 ms  0.009 ms
+
+
+
+++++++++++++++++++++++ sender2 -> sender2 ++++++++++++++++++++++
+
+
+
+traceroute to sender2 (10.0.0.4), 30 hops max, 60 byte packets
+ 1  sender2 (10.0.0.4)  0.020 ms  0.006 ms  0.006 ms
+
+
+
+++++++++++++++++++++++ sender2 -> receiver1 ++++++++++++++++++++++
+
+
+
+traceroute to receiver1 (10.1.0.3), 30 hops max, 60 byte packets
+ 1  router1 (10.0.0.2)  0.036 ms  0.010 ms  0.008 ms
+ 2  10.2.0.4 (10.2.0.4)  0.028 ms * *
+ 3  receiver1 (10.1.0.3)  0.042 ms  0.021 ms  0.019 ms
+
+
+
+++++++++++++++++++++++ sender2 -> receiver2 ++++++++++++++++++++++
+
+
+
+traceroute to receiver2 (10.1.0.4), 30 hops max, 60 byte packets
+ 1  router1 (10.0.0.2)  0.032 ms  0.008 ms  0.008 ms
+ 2  * * *
+ 3  receiver2 (10.1.0.4)  0.025 ms  0.014 ms  0.014 ms
+
+
+
+++++++++++++++++++++++ sender2 -> router1 ++++++++++++++++++++++
+
+
+
+traceroute to router1 (10.0.0.2), 30 hops max, 60 byte packets
+ 1  * * *
+ 2  * * *
+ 3  * * *
+ 4  * * *
+ 5  * * *
+ 6  * router1 (10.0.0.2)  0.438 ms  0.047 ms
+
+
+
+++++++++++++++++++++++ sender2 -> router2 ++++++++++++++++++++++
+
+
+
+traceroute to router2 (10.1.0.2), 30 hops max, 60 byte packets
+ 1  * * *
+ 2  router2 (10.1.0.2)  0.036 ms  0.016 ms  0.017 ms
+
+
+
+++++++++++++++++++++++ receiver1 -> sender1 ++++++++++++++++++++++
+
+
+
+traceroute to sender1 (10.0.0.3), 30 hops max, 60 byte packets
+ 1  router2 (10.1.0.2)  0.045 ms  0.009 ms  0.008 ms
+ 2  10.2.0.2 (10.2.0.2)  0.032 ms  0.023 ms  0.013 ms
+ 3  sender1 (10.0.0.3)  0.027 ms  0.017 ms  0.017 ms
+
+
+
+++++++++++++++++++++++ receiver1 -> sender2 ++++++++++++++++++++++
+
+
+
+traceroute to sender2 (10.0.0.4), 30 hops max, 60 byte packets
+ 1  router2 (10.1.0.2)  0.040 ms  0.014 ms  0.007 ms
+ 2  10.2.0.2 (10.2.0.2)  0.025 ms  0.012 ms  0.011 ms
+ 3  sender2 (10.0.0.4)  0.025 ms  0.015 ms  0.015 ms
+
+
+
+++++++++++++++++++++++ receiver1 -> receiver1 ++++++++++++++++++++++
+
+
+
+traceroute to receiver1 (10.1.0.3), 30 hops max, 60 byte packets
+ 1  receiver1 (10.1.0.3)  0.018 ms  0.003 ms  0.003 ms
+
+
+
+++++++++++++++++++++++ receiver1 -> receiver2 ++++++++++++++++++++++
+
+
+
+traceroute to receiver2 (10.1.0.4), 30 hops max, 60 byte packets
+ 1  receiver2 (10.1.0.4)  0.035 ms  0.009 ms  0.008 ms
+
+
+
+++++++++++++++++++++++ receiver1 -> router1 ++++++++++++++++++++++
+
+
+
+traceroute to router1 (10.0.0.2), 30 hops max, 60 byte packets
+ 1  router2 (10.1.0.2)  0.045 ms * *
+ 2  router1 (10.0.0.2)  0.026 ms * *
+
+
+
+++++++++++++++++++++++ receiver1 -> router2 ++++++++++++++++++++++
+
+
+
+traceroute to router2 (10.1.0.2), 30 hops max, 60 byte packets
+ 1  * * *
+ 2  * * *
+ 3  * * *
+ 4  * * *
+ 5  * * *
+ 6  * router2 (10.1.0.2)  0.052 ms  0.011 ms
+
+
+
+++++++++++++++++++++++ receiver2 -> sender1 ++++++++++++++++++++++
+
+
+
+traceroute to sender1 (10.0.0.3), 30 hops max, 60 byte packets
+ 1  router2 (10.1.0.2)  0.038 ms  0.009 ms  0.007 ms
+ 2  10.2.0.2 (10.2.0.2)  0.031 ms  0.028 ms  0.014 ms
+ 3  sender1 (10.0.0.3)  0.026 ms  0.029 ms  0.020 ms
+
+
+
+++++++++++++++++++++++ receiver2 -> sender2 ++++++++++++++++++++++
+
+
+
+traceroute to sender2 (10.0.0.4), 30 hops max, 60 byte packets
+ 1  router2 (10.1.0.2)  0.032 ms  0.007 ms  0.007 ms
+ 2  10.2.0.2 (10.2.0.2)  0.025 ms  0.011 ms  0.011 ms
+ 3  sender2 (10.0.0.4)  0.024 ms  0.015 ms  0.014 ms
+
+
+
+++++++++++++++++++++++ receiver2 -> receiver1 ++++++++++++++++++++++
+
+
+
+traceroute to receiver1 (10.1.0.3), 30 hops max, 60 byte packets
+ 1  receiver1 (10.1.0.3)  0.032 ms  0.009 ms  0.007 ms
+
+
+
+++++++++++++++++++++++ receiver2 -> receiver2 ++++++++++++++++++++++
+
+
+
+traceroute to receiver2 (10.1.0.4), 30 hops max, 60 byte packets
+ 1  receiver2 (10.1.0.4)  0.021 ms  0.004 ms  0.003 ms
+
+
+
+++++++++++++++++++++++ receiver2 -> router1 ++++++++++++++++++++++
+
+
+
+traceroute to router1 (10.0.0.2), 30 hops max, 60 byte packets
+ 1  router2 (10.1.0.2)  0.031 ms * *
+ 2  router1 (10.0.0.2)  0.025 ms * *
+
+
+
+++++++++++++++++++++++ receiver2 -> router2 ++++++++++++++++++++++
+
+
+
+traceroute to router2 (10.1.0.2), 30 hops max, 60 byte packets
+ 1  * * *
+ 2  * * *
+ 3  * * *
+ 4  * * *
+ 5  * * *
+ 6  * router2 (10.1.0.2)  0.440 ms  0.062 ms
+
+
+
+++++++++++++++++++++++ router1 -> sender1 ++++++++++++++++++++++
+
+
+
+traceroute to sender1 (10.0.0.3), 30 hops max, 60 byte packets
+ 1  sender1 (10.0.0.3)  0.034 ms  0.009 ms  0.007 ms
+
+
+
+++++++++++++++++++++++ router1 -> sender2 ++++++++++++++++++++++
+
+
+
+traceroute to sender2 (10.0.0.4), 30 hops max, 60 byte packets
+ 1  sender2 (10.0.0.4)  0.036 ms  0.009 ms  0.007 ms
+
+
+
+++++++++++++++++++++++ router1 -> receiver1 ++++++++++++++++++++++
+
+
+
+traceroute to receiver1 (10.1.0.3), 30 hops max, 60 byte packets
+ 1  session1-router2-1.session1_router2router (10.2.0.4)  0.038 ms  0.009 ms  0.008 ms
+ 2  receiver1 (10.1.0.3)  0.024 ms  0.012 ms  0.011 ms
+
+
+
+++++++++++++++++++++++ router1 -> receiver2 ++++++++++++++++++++++
+
+
+
+traceroute to receiver2 (10.1.0.4), 30 hops max, 60 byte packets
+ 1  session1-router2-1.session1_router2router (10.2.0.4)  0.036 ms  0.009 ms  0.007 ms
+ 2  receiver2 (10.1.0.4)  0.023 ms  0.021 ms  0.012 ms
+
+
+
+++++++++++++++++++++++ router1 -> router1 ++++++++++++++++++++++
+
+
+
+traceroute to router1 (10.0.0.2), 30 hops max, 60 byte packets
+ 1  router1 (10.0.0.2)  0.021 ms  0.005 ms  0.003 ms
+
+
+
+++++++++++++++++++++++ router1 -> router2 ++++++++++++++++++++++
+
+
+
+traceroute to router2 (10.1.0.2), 30 hops max, 60 byte packets
+ 1  * * *
+ 2  * * *
+ 3  * * *
+ 4  * * *
+ 5  * * *
+ 6  * router2 (10.1.0.2)  0.385 ms  0.065 ms
+
+
+
+++++++++++++++++++++++ router2 -> sender1 ++++++++++++++++++++++
+
+
+
+traceroute to sender1 (10.0.0.3), 30 hops max, 60 byte packets
+ 1  session1-router1-1.session1_router2router (10.2.0.2)  0.044 ms  0.011 ms  0.008 ms
+ 2  sender1 (10.0.0.3)  0.027 ms  0.014 ms  0.014 ms
+
+
+
+++++++++++++++++++++++ router2 -> sender2 ++++++++++++++++++++++
+
+
+
+traceroute to sender2 (10.0.0.4), 30 hops max, 60 byte packets
+ 1  session1-router1-1.session1_router2router (10.2.0.2)  0.040 ms  0.010 ms  0.011 ms
+ 2  sender2 (10.0.0.4)  0.026 ms  0.018 ms  0.018 ms
+
+
+
+++++++++++++++++++++++ router2 -> receiver1 ++++++++++++++++++++++
+
+
+
+traceroute to receiver1 (10.1.0.3), 30 hops max, 60 byte packets
+ 1  receiver1 (10.1.0.3)  0.046 ms  0.015 ms  0.011 ms
+
+
+
+++++++++++++++++++++++ router2 -> receiver2 ++++++++++++++++++++++
+
+
+
+traceroute to receiver2 (10.1.0.4), 30 hops max, 60 byte packets
+ 1  receiver2 (10.1.0.4)  0.042 ms  0.014 ms  0.009 ms
+
+
+
+++++++++++++++++++++++ router2 -> router1 ++++++++++++++++++++++
+
+
+
+traceroute to router1 (10.0.0.2), 30 hops max, 60 byte packets
+ 1  router1 (10.0.0.2)  0.035 ms * *
+
+
+
+++++++++++++++++++++++ router2 -> router2 ++++++++++++++++++++++
+
+
+
+traceroute to router2 (10.1.0.2), 30 hops max, 60 byte packets
+ 1  router2 (10.1.0.2)  0.019 ms  0.004 ms  0.003 ms
