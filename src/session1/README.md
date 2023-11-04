@@ -82,3 +82,19 @@ The username and password to **all** the machines is "root" and "password"
 4. retrieve the dump file from `router1`
 you can access the PCAP file, like I said, directly from your computer.\
 The file can be huge (5 GB)
+
+### Set bandwith, buffer size, and delay of router1 and router2
+`./set_link_capacity.sh` will:
+1. limit the capacity to 20 Mbit with 10ms delay (on the specified interface)
+2. set the buffer size as 10 packets (on the specified interface)
+
+### Test influence of buffer size
+
+`./test_buffer_size.sh` will:
+1. Disable TSO on all nodes
+2. Set link capacity on router 1 and router 2 to 10
+3. Run iperf tcp stress test between sender1 and receiver1
+4. Copy results back and save them in `output`
+5. Set link capacity on router 1 and router 2 to 100
+6. Run iperf tcp stress test between sender1 and receiver1
+7. Copy results back and save them in `output`

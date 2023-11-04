@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # if no username and password are provided, exit and print the usage
-if [ $# -ne 2 ]; then
-  echo "Usage: $0 <username> <password>"
+if [ $# -ne 3 ]; then
+  echo "Usage: $0 <username> <password> <interface>"
   exit 1
 fi
 
@@ -24,5 +24,5 @@ for node in "${nodes_array[@]}"
 do
   echo "Disabling TSO on $node"
 
-  sshpass -p $2 ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o ConnectionAttempts=3 $1@$node "echo '$custom_disble_tso' > /tmp/disable_segmentation_offload.sh && chmod +x /tmp/disable_segmentation_offload.sh && /tmp/disable_segmentation_offload.sh eth0 && rm /tmp/disable_segmentation_offload.sh"
+  sshpass -p $2 ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o ConnectionAttempts=3 $1@$node "echo '$custom_disble_tso' > /tmp/disable_segmentation_offload.sh && chmod +x /tmp/disable_segmentation_offload.sh && /tmp/disable_segmentation_offload.sh $3 && rm /tmp/disable_segmentation_offload.sh"
 done

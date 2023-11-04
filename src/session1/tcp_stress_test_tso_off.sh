@@ -7,7 +7,7 @@ if [ $# -ne 2 ]; then
 fi
 
 # start iperf listener on receiver 1
-sshpass -p $2 ssh -f -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o ConnectionAttempts=3 $1@receiver1 "iperf -s -y C -i 1 -P 1 -p 5001 > /tmp/iperf_tcp_tso_off.csv &"
+sshpass -p $2 ssh -f -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o ConnectionAttempts=3 $1@receiver1 "rm -f /tmp/iperf_tcp_tso_off.csv && iperf -s -y C -i 1 -P 1 -p 5001 > /tmp/iperf_tcp_tso_off.csv &"
 
 # start tcpdump on router1 to capture the traffic
 sshpass -p $2 ssh -f -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o ConnectionAttempts=3 $1@router1 "echo $2 | sudo -S tcpdump -G 15 -W 1 -n -i eth0 -w /tmp/report.pcap host sender1 and host receiver1 &"
