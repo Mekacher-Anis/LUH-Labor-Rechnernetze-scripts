@@ -4,7 +4,8 @@
 ### Description
 I've created an "exact" replica of lab environment that we're supposed to work with in Emulab using docker/compose.
 
-Almost everything from the lab can be tested except for experiments that involve changing the TCP modes (Tahoe, Reno, cubic...) in the kernel.
+> [!NOTE]
+> Almost everything from the lab can be tested except for experiments that involve changing the TCP modes (Tahoe, Reno, cubic...) in the kernel.
 This is a limitation of docker containers as they share the same kernel as their docker host and must therefore use the same mode.
 So you sadly can't test the last experiments from the lab that test the effect of different TCP modes.
 
