@@ -103,3 +103,13 @@ The file can be huge (5 GB)
 5. Set link capacity on router 1 and router 2 to 100
 6. Run iperf tcp stress test between sender1 and receiver1
 7. Copy results back and save them in `output`
+
+
+### Stress test tcp udp same time
+
+`./tcp_stress_test_tcp_and_udp.sh` will:
+1. Send TCP traffic using iperf from sender1 -> receiver1 for 120 seconds
+2. After 30 seconds send 10 Mbps UDP traffic from sender2 -> receiver2
+3. After 30 seconds send 30 Mbps UDP traffic from sender2 -> receiver2
+4. After 30 seconds send 50 Mbps UDP traffic from sender2 -> receiver2
+5. Retrieve the TCP throughput from receiver1 and receiver2
