@@ -22,7 +22,7 @@ do
     header='timestamp,Snd IP,Snd port,RCV IP,RCV port,ID,report time,sent data Bytes,throughput bits/s'
 
     # get the iperf log from receiver1
-    sshpass -p $2 scp -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o ConnectionAttempts=3 $1@receiver1:/tmp/iperf_tcp_$1.csv ./output/iperf_tcp_receiver1_$i.csv
+    sshpass -p $2 scp -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o ConnectionAttempts=3 $1@receiver1:/tmp/iperf_tcp_$i.csv ./output/iperf_tcp_receiver1_$i.csv
     sed -i.old "1s;^;$header\n;" ./output/iperf_tcp_receiver1_$i.csv
 
     echo "Done with $i parallel streams"

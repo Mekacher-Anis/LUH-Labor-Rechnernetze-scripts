@@ -1,4 +1,4 @@
-timestamp,Snd IP,Snd port,RCV IP,RCV port,ID,report time,sent data Bytes,throughput bits/s , Jitter ms, lost datagrams,total datagrams, lost datagrams in %,0
+timestamp,Snd IP,Snd port,RCV IP,RCV port,ID,report time,sent data Bytes,throughput bits/s, Jitter ms, lost datagrams,total datagrams, lost datagrams in %,0
 20231103122313,10.1.0.2,39751,10.1.0.4,5002,1,0.0-1.0,1312710,10501680,0.012,0,893,0.000,0
 20231103122314,10.1.0.2,39751,10.1.0.4,5002,1,1.0-2.0,1309770,10478160,0.026,0,891,0.000,0
 20231103122315,10.1.0.2,39751,10.1.0.4,5002,1,2.0-3.0,1311240,10489920,0.173,0,892,0.000,0

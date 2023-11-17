@@ -20,7 +20,7 @@ sshpass -p $2 ssh -f -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o Connecti
 
 sleep 40
 
-header='timestamp,Snd IP,Snd port,RCV IP,RCV port,ID,report time,sent data Bytes,throughput bits/s , Jitter ms, lost datagrams,total datagrams, lost datagrams in %,0'
+header='timestamp,Snd IP,Snd port,RCV IP,RCV port,ID,report time,sent data Bytes,throughput bits/s, Jitter ms, lost datagrams,total datagrams, lost datagrams in %,0'
 
 # get the iperf log from receiver1
 sshpass -p $2 scp -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o ConnectionAttempts=3 $1@receiver1:/tmp/iperf.csv ./output/iperf_udp_receiver1.csv

@@ -13,4 +13,6 @@ The lab contains multiple experiments that teach you:
     - Test performance of a network
     - TCP congestion control
     - Different modes of TCP
-1. Session 2 (WIP)
+1. [Session 2](./src/session2/README.md)\
+The lab contains multiple experiments that teach you:
+    - Different queueing strategies (FIFO, SFB, TBF, ...)
