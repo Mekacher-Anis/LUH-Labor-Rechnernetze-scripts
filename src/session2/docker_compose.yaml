@@ -23,6 +23,8 @@ services:
       iptables -A FORWARD -i eth1 -j ACCEPT &&
       iptables -A FORWARD -i eth0 -j ACCEPT &&
       ip route add 10.1.0.0/16 via 10.2.0.5 &&
+      tc qdisc replace dev eth0 root handle 1: htb default 10 &&
+      tc class add dev eth0 parent 1: classid 1:10 htb rate 1000Mbit burst 15k &&
       /usr/sbin/sshd -D"
 
   intermediateRouter:
@@ -39,6 +41,7 @@ services:
       ip route add 10.0.0.0/16 via 10.2.0.2 &&
       tc qdisc replace dev eth0 root handle 1: htb default 10 &&
       tc class add dev eth0 parent 1: classid 1:10 htb rate 1000Mbit burst 15k &&
+      tc qdisc add dev eth0 parent 1:10 handle 10: netem delay 25ms &&
       /usr/sbin/sshd -D"
 
   router2:
@@ -63,6 +66,8 @@ services:
       iptables -A FORWARD -i eth1 -j ACCEPT &&
       iptables -A FORWARD -i eth0 -j ACCEPT &&
       ip route add 10.0.0.0/16 via 10.2.0.5 &&
+      tc qdisc replace dev eth0 root handle 1: htb default 10 &&
+      tc class add dev eth0 parent 1: classid 1:10 htb rate 1000Mbit burst 15k &&
       /usr/sbin/sshd -D"
 
   sender1:
@@ -82,6 +87,8 @@ services:
     command: >-
       sh -c "ip route del default &&
       ip route add default via 10.0.0.2 &&
+      tc qdisc replace dev eth0 root handle 1: htb default 10 &&
+      tc class add dev eth0 parent 1: classid 1:10 htb rate 1000Mbit burst 15k &&
       /usr/sbin/sshd -D"
 
   sender2:
@@ -101,6 +108,8 @@ services:
     command: >-
       sh -c "ip route del default &&
       ip route add default via 10.0.0.2 &&
+      tc qdisc replace dev eth0 root handle 1: htb default 10 &&
+      tc class add dev eth0 parent 1: classid 1:10 htb rate 1000Mbit burst 15k &&
       /usr/sbin/sshd -D"
 
   receiver1:
@@ -120,6 +129,8 @@ services:
     command: >-
       sh -c "ip route del default &&
       ip route add default via 10.1.0.2 &&
+      tc qdisc replace dev eth0 root handle 1: htb default 10 &&
+      tc class add dev eth0 parent 1: classid 1:10 htb rate 1000Mbit burst 15k &&
       /usr/sbin/sshd -D"
 
   receiver2:
@@ -139,6 +150,8 @@ services:
     command: >-
       sh -c "ip route del default &&
       ip route add default via 10.1.0.2 &&
+      tc qdisc replace dev eth0 root handle 1: htb default 10 &&
+      tc class add dev eth0 parent 1: classid 1:10 htb rate 1000Mbit burst 15k &&
       /usr/sbin/sshd -D"
   
   student:

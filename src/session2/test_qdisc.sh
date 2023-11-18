@@ -77,7 +77,7 @@ two_udp_flows() {
 
 
 # setup fifo queueing discipline on router1
-sshpass -p $2 ssh -f -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o ConnectionAttempts=3 $1@router1 "tc qdisc add dev eth1 root handle 1: bfifo"
+sshpass -p $2 ssh -f -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o ConnectionAttempts=3 $1@router1 "tc qdisc del dev eth1 root && tc qdisc add dev eth1 root handle 1: bfifo"
 
 two_tcp_flows $1 $2 "fifo"
 
