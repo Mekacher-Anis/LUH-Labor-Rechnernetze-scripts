@@ -18,9 +18,7 @@ services:
       - "receiver1:10.1.0.3"
       - "receiver2:10.1.0.4"
     command: >-
-      sh -c "iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE &&
-      iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE &&
-      iptables -A FORWARD -i eth1 -j ACCEPT &&
+      sh -c "iptables -A FORWARD -i eth1 -j ACCEPT &&
       iptables -A FORWARD -i eth0 -j ACCEPT &&
       ip route add 10.1.0.0/16 via 10.2.0.5 &&
       tc qdisc replace dev eth0 root handle 1: htb default 10 &&
@@ -61,9 +59,7 @@ services:
       - "receiver1:10.1.0.3"
       - "receiver2:10.1.0.4"
     command: >-
-      sh -c "iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE &&
-      iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE &&
-      iptables -A FORWARD -i eth1 -j ACCEPT &&
+      sh -c "iptables -A FORWARD -i eth1 -j ACCEPT &&
       iptables -A FORWARD -i eth0 -j ACCEPT &&
       ip route add 10.0.0.0/16 via 10.2.0.5 &&
       tc qdisc replace dev eth0 root handle 1: htb default 10 &&

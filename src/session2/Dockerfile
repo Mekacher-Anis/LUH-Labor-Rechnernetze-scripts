@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 
 ARG DEBIAN_FRONTEND=noninteractive
-RUN apt-get -qq update && apt-get -qq -y install net-tools iputils-ping iperf openssh-server sshpass traceroute iptables iproute2 ethtool sudo tcpdump
+RUN apt-get -qq update && apt-get -qq -y install net-tools iputils-ping iperf openssh-server sshpass traceroute iptables iproute2 ethtool sudo tcpdump netcat
 
 RUN mkdir /var/run/sshd
 RUN echo 'root:password' | chpasswd

@@ -209,6 +209,38 @@ list_of_plot_combinations = [
     ),
 ]
 
+list_of_plot_combinations = [
+    (
+        "./output/exp1/timeline.png",
+        [
+            (
+                "./output/exp1/tc_configuration_experiment1_0s.csv",
+                "timestamp",
+                "throughput bits/s",
+                "r",
+            ),
+            (
+                "./output/exp1/tc_configuration_experiment1_30s.csv",
+                "timestamp",
+                "throughput bits/s",
+                "r",
+            ),
+            (
+                "./output/exp1/tc_configuration_experiment1_10s.csv",
+                "timestamp",
+                "throughput bits/s",
+                "b",
+            ),
+            (
+                "./output/exp1/tc_configuration_experiment1_50s.csv",
+                "timestamp",
+                "throughput bits/s",
+                "b",
+            ),
+        ],
+    ),
+]
+
 
 for plots in list_of_plot_combinations:
     plt.figure()
