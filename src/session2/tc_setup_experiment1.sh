@@ -58,7 +58,7 @@ sshpass -p $2 ssh -f -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o Connecti
 
 echo "Starting inter 3"
 
-sleep 15
+sleep 25
 
 header='timestamp,Snd IP,Snd port,RCV IP,RCV port,ID,report time,sent data Bytes,throughput bits/s'
   
