@@ -26,6 +26,15 @@ sudo tc filter add dev $3 parent 1:0 prio 3 protocol all u32 match u32 0 0 flowi
 EOF
 )
 
+# sudo tc qdisc del dev eth1 root 2>/dev/null &&
+# sudo tc qdisc add dev eth1 root handle 1:0 prio priomap 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 &&
+# sudo tc qdisc add dev eth1 parent 1:1 handle 2:0 sfq &&
+# sudo tc qdisc add dev eth1 parent 1:2 handle 3:0 htb default 1 &&
+# sudo tc class add dev eth1 parent 3:0 classid 3:1 htb rate 50mbit &&
+# sudo tc filter add dev eth1 parent 1:0 prio 1 protocol ip u32 match ip dport 30001 0xffff flowid 1:1 &&
+# sudo tc filter add dev eth1 parent 1:0 prio 2 protocol ip u32 match ip src 10.0.0.3/32 flowid 1:2 &&
+# sudo tc filter add dev eth1 parent 1:0 prio 3 protocol all u32 match u32 0 0 flowid 1:3
+
 sshpass -p $2 ssh -f -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o ConnectionAttempts=3 $1@router1 "$command"
 
 

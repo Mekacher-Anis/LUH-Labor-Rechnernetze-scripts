@@ -241,6 +241,77 @@ list_of_plot_combinations = [
     ),
 ]
 
+list_of_plot_combinations = [
+    (
+        "./output/exp2/r1vr2/r1vr2.png",
+        [
+            (
+                "./output/exp2/r1vr2/two_concurrent_tcp_streams_receiver1.csv",
+                "timestamp",
+                "throughput bits/s",
+                "r",
+            ),
+            (
+                "./output/exp2/r1vr2/two_concurrent_tcp_streams_receiver2.csv",
+                "timestamp",
+                "throughput bits/s",
+                "b",
+            )
+        ],
+    ),
+    (
+        "./output/exp2/3tor1/3tor1.png",
+        [
+            (
+                "./output/exp2/3tor1/three_concurrent_tcp_streams_receiver1_30001.csv",
+                "timestamp",
+                "throughput bits/s",
+                "r",
+            ),
+            (
+                "./output/exp2/3tor1/three_concurrent_tcp_streams_receiver1_30002.csv",
+                "timestamp",
+                "throughput bits/s",
+                "g",
+            ),
+            (
+                "./output/exp2/3tor1/three_concurrent_tcp_streams_receiver1_30003.csv",
+                "timestamp",
+                "throughput bits/s",
+                "b",
+            ),
+        ],
+    ),
+    (
+        "./output/exp2/3tor2/3tor2.png",
+        [
+            (
+                "./output/exp2/3tor2/three_concurrent_tcp_streams_receiver2_30001.csv",
+                "timestamp",
+                "throughput bits/s",
+                "r",
+            ),
+            (
+                "./output/exp2/3tor2/three_concurrent_tcp_streams_receiver2_30002.csv",
+                "timestamp",
+                "throughput bits/s",
+                "g",
+            ),
+            (
+                "./output/exp2/3tor2/three_concurrent_tcp_streams_receiver2_30003.csv",
+                "timestamp",
+                "throughput bits/s",
+                "b",
+            ),
+            (
+                "./output/exp2/3tor2/three_concurrent_tcp_streams_receiver1_30001.csv",
+                "timestamp",
+                "throughput bits/s",
+                "k",
+            ),
+        ],
+    ),
+]
 
 for plots in list_of_plot_combinations:
     plt.figure()
