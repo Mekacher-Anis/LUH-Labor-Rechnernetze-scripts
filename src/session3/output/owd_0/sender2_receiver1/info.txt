@@ -1,0 +1,39 @@
+ITGDec version 2.8.1 (r1023)
+Compile-time options: sctp dccp bursty multiport
+----------------------------------------------------------
+Flow number: 1
+From 10.1.0.2:41338
+To    10.1.0.3:8999
+----------------------------------------------------------
+Total time               =     59.999400 s
+Total packets            =         39356
+Minimum delay            =     -0.008011 s
+Maximum delay            =      0.028228 s
+Average delay            =      0.000915 s
+Average jitter           =      0.000346 s
+Delay standard deviation =      0.000872 s
+Bytes received           =      39356000
+Average bitrate          =   5247.519142 Kbit/s
+Average packet rate      =    655.939893 pkt/s
+Packets dropped          =             0 (0.00 %)
+Average loss-burst size  =      0.000000 pkt
+----------------------------------------------------------
+
+__________________________________________________________
+****************  TOTAL RESULTS   ******************
+__________________________________________________________
+Number of flows          =             1
+Total time               =     59.999400 s
+Total packets            =         39356
+Minimum delay            =     -0.008011 s
+Maximum delay            =      0.028228 s
+Average delay            =      0.000915 s
+Average jitter           =      0.000346 s
+Delay standard deviation =      0.000872 s
+Bytes received           =      39356000
+Average bitrate          =   5247.519142 Kbit/s
+Average packet rate      =    655.939893 pkt/s
+Packets dropped          =             0 (0.00 %)
+Average loss-burst size  =             0 pkt
+Error lines              =             0
+----------------------------------------------------------
