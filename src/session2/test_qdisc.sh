@@ -77,7 +77,7 @@ two_udp_flows() {
 
 
 # setup fifo queueing discipline on router1
-sshpass -p $2 ssh -f -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o ConnectionAttempts=3 $1@router1 "tc qdisc del dev eth1 root && tc qdisc add dev eth1 root handle 1: bfifo"
+sshpass -p $2 ssh -f -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o ConnectionAttempts=3 $1@router1 "sudo tc qdisc replace dev enp101s0f0 root handle 1: bfifo"
 
 two_tcp_flows $1 $2 "fifo"
 
@@ -88,7 +88,7 @@ one_tcp_one_udp $1 $2 "fifo" "750M"
 two_udp_flows $1 $2 "fifo"
 
 # setup SFQ queueing discipline on router1
-sshpass -p $2 ssh -f -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o ConnectionAttempts=3 $1@router1 "tc qdisc del dev eth1 root && tc qdisc add dev eth1 root handle 1: sfq perturb 1"
+sshpass -p $2 ssh -f -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o ConnectionAttempts=3 $1@router1 "sudo tc qdisc del dev enp101s0f0 root && sudo tc qdisc replace dev enp101s0f0 root handle 1: sfq"
 
 two_tcp_flows $1 $2 "sfq"
 
@@ -99,7 +99,7 @@ one_tcp_one_udp $1 $2 "sfq" "750M"
 two_udp_flows $1 $2 "sfq"
 
 # setup TBF queueing discipline on router1
-sshpass -p $2 ssh -f -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o ConnectionAttempts=3 $1@router1 "tc qdisc del dev eth1 root && tc qdisc add dev eth1 root handle 1: tbf rate 1000mbit burst 1000000000 limit 1000mbit"
+sshpass -p $2 ssh -f -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o ConnectionAttempts=3 $1@router1 "sudo tc qdisc del dev enp101s0f0 root && sudo tc qdisc replace dev enp101s0f0 root handle 1: tbf rate 500mbit burst 1250mbit latency 1"
 
 two_tcp_flows $1 $2 "tbf"
 
